@@ -1,0 +1,66 @@
+html, body,.wrapper
+  width 100%
+  height 100%
+
+.post
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+  margin auto
+
+
+.wrapper
+  position relative
+  .praise-box
+    @extend .post
+    width 150px
+    height 150px
+    background radial-gradient(#fff,#ccc)
+    border-radius 75px
+    box-shadow 0 0 30px rgba(0,0,0,.1)
+    .btn-num
+      @extend .post
+      display block
+      color #fff
+      z-index 10
+      font-size 24px
+      font-weight bold
+      line-height 175px
+      text-align center
+    .btn
+      @extend .post
+      bottom -30px
+      width 75px
+      height 60px
+      outline none
+      background #f9a688
+      border none
+      border-radius 30px 25px 20px 20px
+      &:after,&:before
+        display: block
+        content: ''
+        position: absolute
+      &:after
+        width 15px
+        height 65px
+        left -6px
+        top -16px
+        background #f9a688
+        border-radius 13px 15px 0 0
+        -webkit-transform rotate(-15deg)
+        transform rotate(-15deg)
+      &:before
+        width 15px
+        height 50px
+        left 5px
+        top -40px
+        background-image linear-gradient(to bottom, #f9a688 20px, #f9a688 35px);
+        border-radius 25px 25px 0 0
+        box-shadow 18px 30px #f9a688,
+                   36px 33px #f9a688,
+                   55px 36px #f9a688,
+                   10px 60px #f9a688,
+                   25px 60px #f9a688,
+                   40px 60px #f9a688;
