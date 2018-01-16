@@ -9,7 +9,8 @@ class Thumb extends PraiseButton {
   }
   praise() {
     this.praiseBtn.addEventListener('click', function(e) {
-      this.children[0].innerHTML = parseInt(this.children[0].innerHTML) + 1;
+      let childNode = this.children[0];
+      childNode.innerHTML = parseInt(childNode.innerHTML) + 1;
     }, false);
   }
 }
