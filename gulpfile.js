@@ -17,12 +17,12 @@ gulp.task('stylusTask', function() {
     .pipe(gulp.dest('20180112/css/'));
 });
 
-
 gulp.task('babelTask', function() {
   return gulp.src("20180112/es6/*.js")
     .pipe(babel())
     .pipe(gulp.dest("20180112/es5/"));
 });
+
 
 
 
