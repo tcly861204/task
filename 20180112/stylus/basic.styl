@@ -17,7 +17,8 @@ html, body,.wrapper
     @extend .post
     width 150px
     height 150px
-    background radial-gradient(#fff,#ccc)
+    cursor pointer
+    background radial-gradient(#fff,#ddd)
     border-radius 75px
     box-shadow 0 0 30px rgba(0,0,0,.1)
     .btn-num
@@ -64,3 +65,16 @@ html, body,.wrapper
                    10px 60px #f9a688,
                    25px 60px #f9a688,
                    40px 60px #f9a688;
+  .gray
+    .btn
+      background #d8d8d8
+      &:after
+        background #d8d8d8
+      &:before
+        background-image linear-gradient(to bottom, #d8d8d8 20px, #d8d8d8 35px);
+        box-shadow 18px 30px #d8d8d8,
+                   36px 33px #d8d8d8,
+                   55px 36px #d8d8d8,
+                   10px 60px #d8d8d8,
+                   25px 60px #d8d8d8,
+                   40px 60px #d8d8d8;

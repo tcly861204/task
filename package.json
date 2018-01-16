@@ -1,0 +1,33 @@
+{
+  "name": "studay",
+  "version": "1.0.0",
+  "description": "1. 使用ES6完成点赞+1功能的父类PraiseButton.\r 2. 开发子类Thumb实现大拇指方式点赞\r 3. 使用Babel编译ES6代码，并使用System.js可加载对应编译后的文件\r 4. 将编译后的文件挂载为jQuery的组件\r 5. 实现Karma完成对点赞+1组件的单元测试",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tcly861204/task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tcly861204/task/issues"
+  },
+  "homepage": "https://github.com/tcly861204/task#readme",
+  "dependencies": {
+    "autoprefixer": "^7.2.5",
+    "babel-core": "^6.26.0",
+    "cssnext": "^1.8.4",
+    "gulp": "^3.9.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-postcss": "^7.0.1",
+    "gulp-stylus": "^2.7.0",
+    "precss": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "gulp-babel": "^7.0.0"
+  }
+}
