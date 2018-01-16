@@ -1,11 +1,11 @@
 class PraiseButton {
-  constructor() {
-    this.praiseBtn = document.querySelector('#J_praiseBtn');
+  constructor(id) {
+    this.praiseBtn = document.querySelector('#'+id);
   }
 }
 class Thumb extends PraiseButton {
-  constructor() {
-    super();
+  constructor(id) {
+    super(id);
   }
   praise() {
     this.praiseBtn.addEventListener('click', function(e) {
@@ -14,5 +14,5 @@ class Thumb extends PraiseButton {
   }
 }
 
-let thumb = new Thumb;
+let thumb = new Thumb('J_praiseBtn');
 thumb.praise();
