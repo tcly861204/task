@@ -17,6 +17,7 @@
   npm install karma -g
   npm install karme-core -g
   npm install karma-jasmine --save
+  npm install karma-chrome-launcher --save
 
   执行
   karma start
