@@ -6,9 +6,4 @@ app.use(express.static('20180112'));
 app.get('/', function(req, res) {
   res.send(fs.readFileSync('20180112/index.html', 'utf-8'));
 });
-//jQuery组件实现
-app.get('/jquery',function(req,res){
-  res.send(fs.readFileSync('20180112/jquery.html', 'utf-8'));
-})
-
 app.listen(3000);
