@@ -24,7 +24,7 @@ class Thumb extends PraiseButton {
   /**
    * Creates an instance of Thumb.
    * @param {any} id  元素节点
-   * @param {any} num  初始化数据
+   * @param {any} num  初始化数据不传默认为0
    * @memberof Thumb  对象
    */
   constructor(id, num) {
