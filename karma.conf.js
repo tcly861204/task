@@ -17,24 +17,22 @@ module.exports = function(config) {
     files: [
       // "./20180112/es5/PraiseButton.class.js",
       "./tests/*.spec.js",
-      "./demo/src-demo.js"
+      "./20180112/es5/PraiseButton.test.js",
     ],
 
-    plugins:[
+    plugins: [
       "karma-jasmine",
       "karma-chrome-launcher"
     ],
 
 
     // list of files / patterns to exclude
-    exclude: [
-    ],
+    exclude: [],
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
+    preprocessors: {},
 
 
     // test results reporter to use

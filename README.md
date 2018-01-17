@@ -14,10 +14,10 @@
 
 
   单元测试(需要全局安装模块)
-  npm install karma -g
-  npm install karme-core -g
-  npm install karma-jasmine --save
-  npm install karma-chrome-launcher --save
+  yarn global add karma
+  yarn global add karme-core
+  yarn global add karma-jasmine
+  yarn global add karma-chrome-launcher
 
   执行
   karma start
