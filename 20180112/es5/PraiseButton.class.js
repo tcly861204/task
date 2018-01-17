@@ -8,6 +8,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+/**
+ * 点赞父对象
+ * @class PraiseButton
+ */
 var PraiseButton = function () {
   function PraiseButton(id, num) {
     _classCallCheck(this, PraiseButton);
@@ -29,14 +33,29 @@ var PraiseButton = function () {
 
   return PraiseButton;
 }();
+/**
+ * 子对象
+ * @class Thumb
+ * @extends {PraiseButton}
+ */
+
 
 var Thumb = function (_PraiseButton) {
   _inherits(Thumb, _PraiseButton);
 
+  /**
+   * Creates an instance of Thumb.
+   * @param {any} id  元素节点
+   * @param {any} num  初始化数据
+   * @memberof Thumb  对象
+   */
   function Thumb(id, num) {
     _classCallCheck(this, Thumb);
 
-    return _possibleConstructorReturn(this, (Thumb.__proto__ || Object.getPrototypeOf(Thumb)).call(this, id, num));
+    var _this = _possibleConstructorReturn(this, (Thumb.__proto__ || Object.getPrototypeOf(Thumb)).call(this, id, num));
+
+    _this.praise();
+    return _this;
   }
 
   _createClass(Thumb, [{
@@ -57,12 +76,25 @@ var Thumb = function (_PraiseButton) {
         childNode.innerHTML = _self.num;
       }, false);
     }
+    /**
+     * 判断节点是否有className
+     * @param {any} cls
+     * @returns
+     * @memberof Thumb
+     */
+
   }, {
     key: 'hasClass',
     value: function hasClass(cls) {
       var reg = new RegExp(' ' + cls + ' ');
       return reg.test(' ' + this.ele.className + ' ');
     }
+    /**
+     * 节点添加className
+     * @param {any} cls
+     * @memberof Thumb
+     */
+
   }, {
     key: 'addClass',
     value: function addClass(cls) {
@@ -70,6 +102,12 @@ var Thumb = function (_PraiseButton) {
         this.ele.className += ' ' + cls;
       }
     }
+    /**
+     * 移除节点className
+     * @param {any} cls
+     * @memberof Thumb
+     */
+
   }, {
     key: 'removeClass',
     value: function removeClass(cls) {
@@ -82,5 +120,4 @@ var Thumb = function (_PraiseButton) {
   return Thumb;
 }(PraiseButton);
 
-var thumb = new Thumb('#J_praiseBtn');
-thumb.praise();
+module.exports = Thumb;

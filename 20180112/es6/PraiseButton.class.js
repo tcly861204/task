@@ -1,3 +1,7 @@
+/**
+ * 点赞父对象
+ * @class PraiseButton
+ */
 class PraiseButton {
   constructor(id, num) {
     if (!id) {
@@ -11,9 +15,21 @@ class PraiseButton {
     this.ele.children[0].innerHTML = this.num;
   }
 }
+/**
+ * 子对象
+ * @class Thumb
+ * @extends {PraiseButton}
+ */
 class Thumb extends PraiseButton {
+  /**
+   * Creates an instance of Thumb.
+   * @param {any} id  元素节点
+   * @param {any} num  初始化数据
+   * @memberof Thumb  对象
+   */
   constructor(id, num) {
     super(id, num);
+    this.praise();
   }
   praise() {
     let _self = this;
@@ -31,21 +47,35 @@ class Thumb extends PraiseButton {
       childNode.innerHTML = _self.num;
     }, false);
   }
+  /**
+   * 判断节点是否有className
+   * @param {any} cls
+   * @returns
+   * @memberof Thumb
+   */
   hasClass(cls) {
     let reg = new RegExp(' ' + cls + ' ');
     return reg.test(' ' + this.ele.className + ' ');
   }
+  /**
+   * 节点添加className
+   * @param {any} cls
+   * @memberof Thumb
+   */
   addClass(cls) {
     if (!this.hasClass(cls)) {
       this.ele.className += ' ' + cls;
     }
   }
+  /**
+   * 移除节点className
+   * @param {any} cls
+   * @memberof Thumb
+   */
   removeClass(cls) {
     if (this.hasClass(cls)) {
       this.ele.className = this.ele.className.replace(' ' + cls, '');
     }
   }
 }
-
-let thumb = new Thumb('#J_praiseBtn');
-thumb.praise();
+module.exports = Thumb;
