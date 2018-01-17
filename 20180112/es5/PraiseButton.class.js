@@ -46,16 +46,13 @@ var Thumb = function (_PraiseButton) {
   /**
    * Creates an instance of Thumb.
    * @param {any} id  元素节点
-   * @param {any} num  初始化数据
+   * @param {any} num  初始化数据不传默认为0
    * @memberof Thumb  对象
    */
   function Thumb(id, num) {
     _classCallCheck(this, Thumb);
 
-    var _this = _possibleConstructorReturn(this, (Thumb.__proto__ || Object.getPrototypeOf(Thumb)).call(this, id, num));
-
-    _this.praise();
-    return _this;
+    return _possibleConstructorReturn(this, (Thumb.__proto__ || Object.getPrototypeOf(Thumb)).call(this, id, num));
   }
 
   _createClass(Thumb, [{

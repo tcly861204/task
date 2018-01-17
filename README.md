@@ -12,4 +12,13 @@
   2. npm install 安装依赖
   3. npm run dev 打开浏览器输入 http://localhost:3000
 
+
+  单元测试(需要全局安装模块)
+  npm install karma -g
+  npm install karme-core -g
+  npm install karma-jasmine --save
+
+  执行
+  karma start
+
 ```

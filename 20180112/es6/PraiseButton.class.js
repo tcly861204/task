@@ -29,7 +29,6 @@ class Thumb extends PraiseButton {
    */
   constructor(id, num) {
     super(id, num);
-    this.praise();
   }
   praise() {
     let _self = this;
@@ -45,6 +44,7 @@ class Thumb extends PraiseButton {
         _self.removeClass('gray');
       }
       childNode.innerHTML = _self.num;
+      return _self.num;
     }, false);
   }
   /**
