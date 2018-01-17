@@ -28,6 +28,7 @@
     "gulp-stylus": "^2.7.0",
     "jasmine-core": "^2.8.0",
     "karma": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.1",
     "precss": "^2.0.0",
     "systemjs": "^0.20.19"

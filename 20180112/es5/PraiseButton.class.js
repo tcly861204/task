@@ -52,7 +52,10 @@ var Thumb = function (_PraiseButton) {
   function Thumb(id, num) {
     _classCallCheck(this, Thumb);
 
-    return _possibleConstructorReturn(this, (Thumb.__proto__ || Object.getPrototypeOf(Thumb)).call(this, id, num));
+    var _this = _possibleConstructorReturn(this, (Thumb.__proto__ || Object.getPrototypeOf(Thumb)).call(this, id, num));
+
+    _this.praise();
+    return _this;
   }
 
   _createClass(Thumb, [{
@@ -71,7 +74,19 @@ var Thumb = function (_PraiseButton) {
           _self.removeClass('gray');
         }
         childNode.innerHTML = _self.num;
+        return _self.num;
       }, false);
+    }
+    /**
+     * 测试类
+     *
+     * @memberof Thumb
+     */
+
+  }, {
+    key: 'test',
+    value: function test() {
+      return this.num += 1;
     }
     /**
      * 判断节点是否有className

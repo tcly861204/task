@@ -29,6 +29,7 @@ class Thumb extends PraiseButton {
    */
   constructor(id, num) {
     super(id, num);
+    this.praise();
   }
   praise() {
     let _self = this;
@@ -46,6 +47,14 @@ class Thumb extends PraiseButton {
       childNode.innerHTML = _self.num;
       return _self.num;
     }, false);
+  }
+  /**
+   * 测试类
+   *
+   * @memberof Thumb
+   */
+  test(){
+    return this.num+=1;
   }
   /**
    * 判断节点是否有className
