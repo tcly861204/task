@@ -41,9 +41,11 @@ app.use(router(_ => {
   _.get('/index/index', async(ctx, next) => {
     ctx.body = await ctx.render('index.html');
   });
+  //获取当前点赞数量
   _.post('/getPraiseNum', async(ctx, next) => {
     ctx.body = await getInterFaceDate("get");
   });
+  //更新点赞数
   _.post('/praise', async(ctx, next) => {
     ctx.body = await getInterFaceDate("put");
   });
