@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>点赞</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/basic.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="praise-box" id="J_praiseBtn">
+      <span class="btn-num"></span>
+      <div class="btn"></div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/axios/0.17.1/axios.min.js"></script>
+  <script>
+    (function(window) {
+      ({
+
+        init: function() {
+          this.praiseNumNode = document.querySelectorAll(".btn-num")[0];
+          this.initPraiseNum();
+          this.updateNum();
+        },
+        // 初始化点赞数
+        initPraiseNum: function() {
+          var that = this;
+
+          axios.post("/getPraiseNum").then(function(res) {
+            if (res.data.success) {
+              that.praiseNumNode.innerHTML = res.data.pariseNum;
+            } else {
+              console.log(res.data.errMsg);
+            }
+          });
+        },
+        //更新点赞数
+        updateNum: function() {
+          var that = this;
+          document.querySelector("#J_praiseBtn").addEventListener('click', function() {
+            axios.post('/praise').then(function(res) {
+              if (res.data.success) {
+                that.praiseNumNode.innerHTML = res.data.pariseNum;
+              } else {
+                console.log(res.data.errMsg);
+              }
+            });
+          }, false);
+        }
+      }).init();
+    }(window));
+  </script>
+</body>
+
+</html
