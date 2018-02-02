@@ -16,6 +16,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       // "./20180112/es5/PraiseButton.class.js",
+      "/js/test.js",
       "./tests/uint/*.spec.js"
     ],
 

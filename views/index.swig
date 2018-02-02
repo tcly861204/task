@@ -1,4 +1,4 @@
-{% extends './layout.html' %} {% block content %}
+{% extends './layout.swig' %} {% block content %}
 <div class="wrapper">
   <div class="praise-box" id="J_praiseBtn">
     <span class="btn-num"></span>

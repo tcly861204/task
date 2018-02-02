@@ -20,6 +20,8 @@
   "dependencies": {
     "autoprefixer": "^7.2.5",
     "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-stage-0": "^6.24.1",
     "co": "^4.6.0",
     "cssnext": "^1.8.4",
     "express": "^4.16.2",
@@ -35,9 +37,11 @@
     "koa-simple-router": "^0.2.0",
     "koa-static": "^4.0.2",
     "koa-swig": "^2.2.1",
+    "mocha": "^5.0.0",
     "precss": "^2.0.0",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
+    "supertest": "^3.0.0",
     "systemjs": "^0.20.19"
   },
   "devDependencies": {

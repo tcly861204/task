@@ -18,15 +18,18 @@ gulp.task('stylusTask', function() {
 });
 
 gulp.task('babelTask', function() {
-  return gulp.src("20180112/es6/*.js")
+  return gulp.src("./app.es6.js")
     .pipe(babel())
-    .pipe(gulp.dest("20180112/es5/"));
+    .pipe(gulp.dest("./build"));
 });
 
 
 
 
 gulp.task("default", function() {
-  gulp.watch("20180112/stylus/*.styl", ['stylusTask']);
-  gulp.watch("20180112/es6/*.js", ["babelTask"]);
+  // gulp.watch("20180112/stylus/*.styl", ['stylusTask']);
+  gulp.watch("./app.es6.js", ["babelTask"]);
+  // gulp.watch("./models/*.js", ["babelTask"]);
+  // gulp.watch("./tests/server/server.es6.js",["babelTask"]);
+  // gulp.watch("./controller/*.js", ["babelTask"]);
 });

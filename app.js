@@ -1,37 +1,65 @@
-let Koa = require('koa');
-let path = require('path');
-let router = require('koa-simple-router');
-let convert = require('koa-convert');
-let static = require('koa-static');
-let render = require('koa-swig');
-let co = require('co');
-let request = require('request');
-let app = new Koa();
-let getInterFaceDate = require('./controller/getInterFaceDate.js');
-app.context.render = co.wrap(render({
-  root: path.join(__dirname, "./views"),
+'use strict';
+
+var _koa = require('koa');
+
+var _koa2 = _interopRequireDefault(_koa);
+
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
+
+var _koaSimpleRouter = require('koa-simple-router');
+
+var _koaSimpleRouter2 = _interopRequireDefault(_koaSimpleRouter);
+
+var _koaConvert = require('koa-convert');
+
+var _koaConvert2 = _interopRequireDefault(_koaConvert);
+
+var _koaStatic = require('koa-static');
+
+var _koaStatic2 = _interopRequireDefault(_koaStatic);
+
+var _koaSwig = require('koa-swig');
+
+var _koaSwig2 = _interopRequireDefault(_koaSwig);
+
+var _co = require('co');
+
+var _co2 = _interopRequireDefault(_co);
+
+var _request = require('request');
+
+var _request2 = _interopRequireDefault(_request);
+
+var _register = require('babel-core/register');
+
+var _register2 = _interopRequireDefault(_register);
+
+var _babelPolyfill = require('babel-polyfill');
+
+var _babelPolyfill2 = _interopRequireDefault(_babelPolyfill);
+
+var _initController = require('./controller/initController');
+
+var _initController2 = _interopRequireDefault(_initController);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var app = new _koa2.default();
+
+//静态文件配置
+app.context.render = _co2.default.wrap((0, _koaSwig2.default)({
+  root: _path2.default.join(__dirname, "./views"),
   autoescape: true,
   cache: 'memory',
-  ext: "html",
+  ext: "swig",
   varControls: ['[[', ']]'],
   writeBody: false
 }));
-app.use(router(_ => {
-  _.get('/', (ctx, next) => {
-    ctx.body = "hello wrold";
-  });
-  _.get('/index/index', async(ctx, next) => {
-    ctx.body = await ctx.render('index.html', { title: '点赞+1' });
-  });
-  //获取当前点赞数量
-  _.post('/getPraiseNum', async(ctx, next) => {
-    ctx.body = await getInterFaceDate("get");
-  });
-  //更新点赞数
-  _.post('/praise', async(ctx, next) => {
-    ctx.body = await getInterFaceDate("put");
-  });
-}));
+app.use((0, _koaConvert2.default)((0, _koaStatic2.default)(_path2.default.join(__dirname, "public"))));
 
-app.use(convert(static(path.join(__dirname, "public"))));
+//配置路由
+_initController2.default.init(app, _koaSimpleRouter2.default);
+
 app.listen(3000);

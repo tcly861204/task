@@ -10,7 +10,7 @@
     initPraiseNum: function() {
       var that = this;
 
-      axios.post("/getPraiseNum").then(function(res) {
+      axios.post("/praiseNum").then(function(res) {
         if (res.data.success) {
           that.praiseNumNode.innerHTML = res.data.pariseNum;
         } else {
