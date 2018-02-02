@@ -29,6 +29,7 @@ gulp.task('babelTask', function() {
 gulp.task("default", function() {
   // gulp.watch("20180112/stylus/*.styl", ['stylusTask']);
   gulp.watch("./app.es6.js", ["babelTask"]);
+  // gulp.watch("./config/*.js", ["babelTask"]);
   // gulp.watch("./models/*.js", ["babelTask"]);
   // gulp.watch("./tests/server/server.es6.js",["babelTask"]);
   // gulp.watch("./controller/*.js", ["babelTask"]);

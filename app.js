@@ -44,22 +44,26 @@ var _initController = require('./controller/initController');
 
 var _initController2 = _interopRequireDefault(_initController);
 
+var _config = require('./config/config');
+
+var _config2 = _interopRequireDefault(_config);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = new _koa2.default();
 
 //静态文件配置
 app.context.render = _co2.default.wrap((0, _koaSwig2.default)({
-  root: _path2.default.join(__dirname, "./views"),
+  root: _config2.default.get('viewsDIR'),
   autoescape: true,
   cache: 'memory',
   ext: "swig",
   varControls: ['[[', ']]'],
   writeBody: false
 }));
-app.use((0, _koaConvert2.default)((0, _koaStatic2.default)(_path2.default.join(__dirname, "public"))));
+app.use((0, _koaConvert2.default)((0, _koaStatic2.default)(_config2.default.get('staticDIR'))));
 
 //配置路由
 _initController2.default.init(app, _koaSimpleRouter2.default);
 
-app.listen(3000);
+app.listen(_config2.default.get('port'));
