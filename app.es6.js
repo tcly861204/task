@@ -5,7 +5,6 @@ import convert from 'koa-convert';
 import koaStatic from 'koa-static';
 import render from 'koa-swig';
 import co from 'co';
-import request from 'request';
 import babelCore from 'babel-core/register';
 import babelPolyFill from 'babel-polyfill';
 import initController from "./controller/initController";
